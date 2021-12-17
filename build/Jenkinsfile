@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    environment {
+        CI = 'true'
+    }
+    stages {
+        stage('dev') {
+            when {
+                branch 'dev'
+            }
+            steps {
+                sh 'docker exec {workspace} chmod +x /var/www/tasks/parser/build/dev/install.sh'
+                sh 'docker exec {workspace} /var/www/tasks/parser/build/dev/install.sh'
+            }
+        }
+    }
+}
