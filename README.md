@@ -43,4 +43,4 @@ php artisan test
 ## Jenkins
 
 In build folder replace workspace name for docker container with 
-installed php and composer also {path_to_project} in bash file.
+installed php and composer also {path_to_project} in shell file.
